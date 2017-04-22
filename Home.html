@@ -1,0 +1,747 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+        <meta charset="UTF-8">
+        
+<!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+        
+        <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+         <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src='jquery-2.1.4.min.js' type='text/javascript'></script>
+        <script src='cycle2.js' type='text/javascript'></script>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+        
+    
+        
+	</head>
+<!------------------------------------------------------   -->
+	<body>
+        
+        <div id="login-box" class="login-popup">
+            
+                <div class="legend">
+                    <a href="#" class="close">X</a>
+                    <legend>Login</legend>
+                </div>
+            
+<!--
+                <div class="input">
+                    <input type="email" placeholder="Email" required />
+                   <span class="glyphicon glyphicon-envelope"></span>
+                </div>
+
+                <div class="input">
+                    <input type="password" placeholder="Password" required />
+                  
+                </div>
+-->
+
+                <div class="form">
+                    <input type="email" placeholder="Email" class="form-control" required />
+                    <span class="glyphicon glyphicon-envelope"></span>
+
+                    <input type="password" placeholder="Password" class="form-control" required />
+                </div>
+            
+                <p>Forgot your password?</p>
+            
+                <button type="submit" class="submit"></button>
+
+                
+        </div>
+    
+        <header id="header">
+            <a href="Home.html"><img id="logo" src="img/logo3.png" ></img></a>
+            <nav class="top">
+                <ul class="right">
+                    <li class="login">
+                        Are you a member?
+                        <a id="loginwindow" href="#login-box">Login / Register</a>
+                    </li>  
+                </ul>
+            </nav>
+<!--            <div class ="headbanner"></div> -->
+            
+            <nav id="navbar">
+                                
+                <div class="navbutton"></div>
+                 <ul class="govt">
+                    <a href="https://www.passports.govt.nz/">Go to passport.govt.nz</a>
+                     <span></span>
+                </ul>
+            
+                <ul class=navlist>
+                    <li id="home"><a href="Home.html">Home</a></li>
+<!--                    <li id="deals"><a href="Deals.html">Deals</a></li>-->
+                    <li id="ourprice"><a href="Ourprice.html">Our Price</a></li>
+                    <li id="faq"><a href="Faq.html">FAQ</a></li>
+                </ul>
+
+                
+                
+            </nav>
+        
+            <div id="line"></div>
+            
+            <div id="container">
+            
+                
+                <div id="slideshow" class="cycle-slideshow" 
+                data-cycle-fx="fade"
+                data-cycle-speed="500"
+                data-cycle-timeout="6000"    
+                >   
+                    <span class="cycle-prev">&#9001;</span>
+                    <span class="cycle-next">&#9002;</span>
+                    <span class="cycle-pager"></span>
+
+                    <img src="img/banner.jpg" alt="">
+                
+                    <img src="img/nz-passport-1200file.jpg" alt=""> 
+                </div>
+                
+            </div>         
+            
+        </header>   
+        
+ 
+        <div id="content">
+            
+            <div id="display"></div>
+         
+            <div id="breadcrumb">
+                <a id="appType" onclick="goToStep(this)">1. Application Type</a>
+                <a id="photoProduct" onclick="goToStep(this)">2. Select Photo Product</a>
+                <a id="bUpload" onclick="goToStep(this)">3. Upload</a>
+                <a id="custDet" onclick="goToStep(this)">4. Customer Details</a>
+                <a id="checkout" onclick="goToStep(this)">5. Checkout</a>
+                <a id="comp" onclick="goToStep(this)">6. Complete!</a>
+            </div>
+
+<!------------------------------------------------------------------------------passport select----------------------------------------------------------------------------------------->
+
+            
+            <section id="passportselect" style="display:block;">
+                <h1 class="starttxt">How are you applying for your New Zealand passport? </h1>
+
+                <div class="selector" style="color:white;">     
+                    <div class="blocks">
+                        <div class="onlineDesc hidden">
+                            <h2>Use this option if you are:</h2>
+                            <p>Renewing your passport online</p>
+                            <p>16 years or over</p>
+                            <p>Your name has not changed since the last passport was issued</p>
+                             <p>Your previous passport has not been lost or stolen</p>
+                             <p>Not applying for an emergency travel document</p>
+                        </div>  
+
+                        <div class="appDesc hidden">
+                            <h2>Use this option if you are one of the following:</h2>
+                                <p>Applying for New Zealand passport for the first time</p>
+                                <p>Your name has changed since your previous passport was issued</p>
+                                <p>Your previous passport has been lost or stolen</p>
+                                <p>Applying for a replacement of an emergency travel document</p>
+                        </div>
+
+                        <div class="online block" >
+                            <a class="icon-online" onclick="nextStep(this)"></a>
+                            <p style="font-size:200%;">Online</p>  
+                        </div>
+
+                        <div class="app block">
+                            <a class="icon-app" onclick="nextStep(this)"></a>
+                            <p style="font-size:200%;">Paper Application</p>
+                        </div>            
+                    </div>
+                </div>    
+        
+            </section>
+                        
+<!------------------------------------------------------------------------------passport select end--------------------------------------------------------------------------------------->
+                            
+<!----------------------------------------------------------------------------------online form------------------------------------------------------------------------------------------->                        
+            <section id="onlineForm" style="display:none;">
+
+                <h1 class="starttxt">Please choose the form of photo for your application...</h1>
+                
+                <ul id="onlineselect">
+                    <div class="help-tip">
+                            <p>A 3'x4' (inches) digital photo that is downloadable.</p>
+                    </div>
+                    <li> 
+                        <p>Digital image</p>
+                    </li>
+                    
+                    <div class="free">
+                        <p>Would you like to grab print outs for FREE?</p>
+                    </div>
+                    
+                    <div class="help-tip">
+                            <p>A set of 6 physical print outs of the passport photo. Size 35mm x 45mm.</p>
+                    </div>
+                    <li>
+                        <p>Physical print out</p>
+                    </li>
+                    
+                </ul>
+                
+                <button type="button" id="onlineNext" class="bsame btn btn-primary" onclick="nextStep(this)">Next</button>
+            </section>
+                            
+
+<!------------------------------------------------------------------------------- online form end----------------------------------------------------------------------------------------->
+            
+
+<!------------------------------------------------------------------------------- appform-------------------------------------------------------------------------------------------------> 
+                        
+            <section id="appForm" style="display:none;" >
+                
+                <h1 class="starttxt">Select form of product you would like to receive...</h1>
+ 
+                 <ul id="physical">
+                    <li class="selTitle"> 
+                        <p>Physical photo</p>
+                    </li>
+                    
+                    <li>
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-danger btn-number" data-type="minus" data-field="quant[2]">
+                              -
+                          </button>
+                        </span>
+                        <input type="text" name="quant[2]" class="form-control input-number" value="0" min="0" max="100">
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                              +
+                        </button>
+                      </span>
+                    </li>
+                </ul>
+                
+                
+                <div class="free"><p>Do you want to grabe a digital file for FREE?</p></div>
+                
+
+                <ul id="digital">
+                    <li class="selTitle">
+                        <p>Ready for print digital file</p
+                    </li>
+                            
+                    <li>
+                        <span class="input-group-btn">
+                          <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+                              -
+                          </button>
+                        </span>
+                            <input type="text" name="quant[2]" class="form-control input-number" value="0" min="0" max="100" >
+                        
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                              +
+                          </button>
+                      </span>
+                        
+                    </li>        
+                </ul>
+                    
+                    
+                 <button type="button" id="appNext" class="bsame btn btn-primary" onclick="nextStep(this)">Next</button>
+            </section>
+                          
+            
+<!------------------------------------------------------------------------------- upload----------------------------------------------------------------------------------------->
+ 
+            <section id="upload" style="display:none;">
+                <h1 class="starttxt">Please upload your photo...</h1>
+                
+                <div id="photoReq">
+                    <h3>Refer to our example shots and detailed requirements before upload.</h3>
+                    
+                    <div class="exampleBut">
+                        <button id="adult" type="button" class="btn btn-warning" >Photo shot requirements</button>
+<!--                        <button id="child" type="button" class="btn btn-warning" >Children and babies</button>-->
+                    </div>
+                    
+                <div id="desAdult" class="desAdult" style="display:none;">     
+                     <ul>
+                            <div class="incorrect">
+                                <h3>Inccorrect Shots</h3>
+                                <img src="Images/requirement.jpg" >
+                            </div>
+                            
+                            <div class="correct">
+                                <img src="images/correctshot.jpg">    
+                            </div>
+                    </ul>
+                    <h3>Adult requirements and shots</h3>
+
+                        <h4>To ensure your photo meets the regulations of a New Zealand passport, the following image requirements should be met.</h4>
+                        <div class="rules">
+                            <p>1. Neutral expression, not smiling or frowning</p>
+                            <p>2. Hair not covering any face features, showing all eyebrows</p>
+                            <p>3. No hair clip showing</p>
+                            <p>4. No head bands, or head coverings</p>
+                            <p>5. Must not wear glasses and hats</p>
+
+
+                            <p>6. Eyes must be open </p>
+                            <p>7. Mouth closed</p>
+                            <p>8. Taken with a plain background (e.g. no people, no objects)</p>
+                            <p>9. Hair behind ears or tied up</p>
+                            <p>10. Head straight to the camera</p>
+                            <p>11. Must not have shadows on face or background</p>
+                            <p>12. Photo contains applicant’s upper half (Above waist)</p>
+                            <p>13. No flash but under good lighting condition</p>
+                            <p>14. In focus, with no red-eye and no reflected light on the face</p>
+                            <p>15. Camera setting is set to the highest quality</p>
+                            <p>16. Camera setting set to full color</p>
+                        </div>           
+                    </div>
+<!--
+                    
+                    <div id=desChild> 
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    </div>
+                
+-->
+                </div>
+                <div id="previewImage">
+                    <img id="previewImageId" style="max-width:400px;" src="#"/>
+                
+                </div>
+                
+                <div id="uploadBox" class="uploadBox"> 
+                        
+                    <div class="uButton">
+                         <input class="browse" type="file" multiple accept="image/*" onchange="previewImage(event)">
+                        <button type="button" class="btn btn-primary btn-lg">SELECT DOCUMENTS TO UPLOAD</button>
+                       
+                    </div>     
+
+                    <div class="dragDrop">or drag & drop
+                        <p>File type: JPEG or JPG format</p>
+                        <p>File size: Preferably more than 500kb (900x1200 pixels) </p>
+                    </div>
+
+                </div>  
+                
+               <button type="button" id="upNext" class="bsame btn btn-primary" onclick="nextStep(this)">Next</button>
+
+            </section>
+                
+<!------------------------------------------------------------------------------- upload end----------------------------------------------------------------------------------------->
+                    
+
+                
+                
+            <section id="custDetail" style="display:none;">
+                
+                <h1 class="starttext">Do you have an account?</h1>
+                
+                <div id="custSignin">
+
+                    <h2>Login</h2>
+
+                        <div id="arrows">
+                                <div class="register"></div>
+                                <p>Register with us</p>  
+                        </div>
+
+                        <div id="userInput">
+                            <form>
+
+                                <fieldset>
+                                    <label>Email address</label>
+                                    <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+                                </fieldset>
+                                <fieldset>
+
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" id="inputPass" placeholder=" Enter password">
+
+                                    <a href="">Forgot your password?</a>
+                                </fieldset>
+
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </form>
+                        </div>
+
+                </div>    
+                
+                
+                
+                <div id="custRegister">
+                    <h2>Register now</h2>
+
+                    <div id="arrows">
+                        <div class="signin"></div>
+                        <p>Already have an account?</p>  
+                    </div>
+
+                    <div id="userInput">
+                        <form>
+                            <div class="custName">
+                                <ul>
+                                    <li>
+                                        <label>First name</label>
+                                        <input type="text" class="form-control" id="custFirst" placeholder="Enter your first name">
+                                    </li>
+                                    <li>
+                                        <label>Last name</label>
+                                        <input type="text" class="form-control" id="custLast" placeholder="Enter your last name">
+
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <fieldset>
+                                <label>Email address</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+                            </fieldset>
+                            <fieldset>
+                                <label>Password</label>
+                                <input type="password" class="form-control" id="inputPass" placeholder=" Enter password">
+                            </fieldset>
+                            <fieldset>
+                                <label>Re-enter password</label>
+                                <input type="password" class="form-control" id="reEnterPass" placeholder="Enter your password again">
+                            </fieldset>
+
+                            <button type="submit" class="btn btn-primary">Submit & register</button>
+
+                        </form>
+                    </div>
+                
+                     <div id="alreadyMember" style="display:none;">
+                        <span>Already a member?</span>
+                        <button type="button" class="btn btn-primary">Sign in</button>
+                    </div>
+                </div>
+
+            </section>   
+<!--    COMMENT   lOGIN sUCCESSFUL   -->
+        <section id="afterCustDetail" style="display:none;">
+            <div></div>
+            <button type="button" class="btn btn-primary">Proceed to checkout</button>
+                
+                
+        </section>
+          
+<!------------------------------------------------------------------------------- bottomnav------------------------------------------------------------------------------------------------->             
+            <div id="bottomnav">           
+                <ul>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>Refund</li>
+                </ul>
+                
+                <ul>
+                    <li>Terms and Condition</li>
+                    <li>Privacy</li>
+                    <li>Copyright</li>
+                    <li>Disclaiment</li>
+                </ul>
+                            
+                <ul>
+                    <li>Application form download</li>
+                    <li>Online application</li>         
+                </ul> 
+                            
+            </div>
+                        
+ 
+            <div id="copyright"></div>
+                            
+        </div>                            
+                            
+<!----------------------------------------------------------------------------------script----------------------------------------------------------------------------------------------->
+        <script>
+//       $(document).ready(function(){
+//    
+//    $('#display').html($('#passportselect').html());
+//    
+//    $('.icon-online').click(function(){
+//        $('#display').html($('#onlineForm').html());
+//    });
+//    
+//    $('.icon-app').click(function(){
+//        $('#display').html($('#appform').html());
+//    });
+//});    
+            
+//        $(document).ready(function(){
+//            $('.icon-online').click(function(){
+//                $.cookie('selected_photoProduct',$(this).attr(id));
+//            
+//        });
+//        current_photoProduct=$.cookie('selected_photoProduct');
+//        
+//        if(current_photoProduct != null)
+        
+    
+          
+      
+//login window
+        $('#loginwindow').click(function(){
+        
+               var loginBox=$(this).attr('href');
+               $(loginBox).fadeIn(300);
+               
+               $('body').append('<div id="mask"></div>');
+               $('#mask').fadeIn(300);
+               return false;
+           });
+            
+        $('a.close, #mask').click(function(){
+            
+            $('#mask, .login-popup').fadeOut(300, function(){
+                $('#mask').remove();
+            });
+            return false;
+        });
+            
+        
+           
+            
+        function nextStep(elmnt){
+            document.getElementById("passportselect").style.display="none";
+            document.getElementById("onlineForm").style.display="none";
+            document.getElementById("appForm").style.display="none";
+            document.getElementById("upload").style.display="none";
+          
+        if(elmnt.className=="icon-online")
+        {
+            document.getElementById("onlineForm").style.display="block";
+            if( document.getElementById("appType").className != "active")
+                document.getElementById("appType").className += "active";
+            
+        }else if(elmnt.className=="icon-app"){
+            
+            document.getElementById("appForm").style.display="block";
+            if( document.getElementById("appType").className != "active")
+                document.getElementById("appType").className += "active";
+            
+            
+        }else if(elmnt.id=="onlineNext"||elmnt.id=="appNext"){
+    
+            document.getElementById("upload").style.display="block";
+            if(document.getElementById("photoProduct").className != "active")
+                document.getElementById("photoProduct").className += "active";
+        }else if(elmnt.id=="upNext"){
+            document.getElementById("custDetail").style.display="block";
+            if(document.getElementById("bUpload").className != "active")
+                document.getElementById("bUpload").className += "active";
+        }
+               
+       };
+         
+            
+        function goToStep(elmnt){
+        
+            if(elmnt.className=="active"){
+                document.getElementById("passportselect").style.display="none"; document.getElementById("onlineForm").style.display="none";
+                document.getElementById("appForm").style.display="none";
+                document.getElementById("upload").style.display="none";
+                document.getElementById("custDetail").style.display="none";
+                
+                if(elmnt.id=="appType"){
+                    document.getElementById("passportselect").style.display="block";
+                    
+                }else if(elmnt.id=="photoProduct"){
+//                    if(....==icon-online){
+//                        
+//                    }else{
+//                        i//                    }
+                    alert("quantity page");
+                    
+                }else if(elmnt.id=="bUpload"){
+                     document.getElementById("upload").style.display="block";
+                }    
+            }
+        };
+//preview image
+            function previewImage(e){
+                var output=document.getElementById('previewImageId');
+                output.src=URL.createObjectURL(e.target.files[0]);
+            };
+                 
+//online/paper application selection animation                 
+        $(".icon-online").hover(function(){
+            $('.onlineDesc').fadeIn(300).removeClass('hidden');
+        },function(){
+            $('.onlineDesc').addClass('hidden');
+        });
+            
+        $(".icon-app").hover(function(){
+            $('.appDesc').fadeIn(300).removeClass('hidden');
+        },function(){
+            $('.appDesc').addClass('hidden');
+        });
+            
+        
+            
+//upload requirement
+        $("#adult").click(function(){
+            $("#desAdult").slideToggle("slow");
+        });
+            
+        $(".signin").click(function(){
+            $("#custSignin").animate({"margin-Right":"0","opacity":"100"},"slow");
+            $("#custRegister").animate({"left":"-100%","opacity":"0"});
+        });
+        $(".register").click(function(){
+            $("#custRegister").animate({"left":"0","opacity":"100"},"slow");
+            $("#custSignin").animate({"margin-Right":"-100%","opacity":"0"});
+        });
+            
+//        $(".signin").click(function(){
+//            $('#custSignin').animate({'margin-right':0},600);
+//        });
+            
+            //css property inside{}
+        
+//        $('.btn-number').click(function(e){
+//    e.preventDefault();
+//    
+//    fieldName = $(this).attr('data-field');
+//    type      = $(this).attr('data-type');
+//    var input = $("input[name='"+fieldName+"']");
+//    var currentVal = parseInt(input.val());
+//    if (!isNaN(currentVal)) {
+//        if(type == 'minus') {
+//            
+//            if(currentVal > input.attr('min')) {
+//                input.val(currentVal - 1).change();
+//            } 
+//            if(parseInt(input.val()) == input.attr('min')) {
+//                $(this).attr('disabled', true);
+//            }
+//
+//        } else if(type == 'plus') {
+//
+//            if(currentVal < input.attr('max')) {
+//                input.val(currentVal + 1).change();
+//            }
+//            if(parseInt(input.val()) == input.attr('max')) {
+//                $(this).attr('disabled', true);
+//            }
+//
+//        }
+//    } else {
+//        input.val(0);
+//    }
+//});
+//$('.input-number').focusin(function(){
+//   $(this).data('oldValue', $(this).val());
+//});
+//$('.input-number').change(function() {
+//    
+//    minValue =  parseInt($(this).attr('min'));
+//    maxValue =  parseInt($(this).attr('max'));
+//    valueCurrent = parseInt($(this).val());
+//    
+//    name = $(this).attr('name');
+//    if(valueCurrent >= minValue) {
+//        $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+//    } else {
+//        alert('Sorry, the minimum value was reached');
+//        $(this).val($(this).data('oldValue'));
+//    }
+//    if(valueCurrent <= maxValue) {
+//        $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+//    } else {
+//        alert('Sorry, the maximum value was reached');
+//        $(this).val($(this).data('oldValue'));
+//    }
+//    
+//    
+//});
+//$(".input-number").keydown(function (e) {
+//        // Allow: backspace, delete, tab, escape, enter and .
+//        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+//             // Allow: Ctrl+A
+//            (e.keyCode == 65 && e.ctrlKey === true) || 
+//             // Allow: home, end, left, right
+//            (e.keyCode >= 35 && e.keyCode <= 39)) {
+//                 // let it happen, don't do anything
+//                 return;
+//        }
+//        // Ensure that it is a number and stop the keypress
+//        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+//            e.preventDefault();
+//        }
+//    });
+            
+/*------------------------- EventHandlers  ---------------------------*/
+/*--------------------------------------------------------------------*/
+/*--------------------------------------------------------------------*/            
+        (function(){
+            var dropZone = document.getElementById('uploadBox');
+            
+            var upload = function(file){
+                var formData = new FormData(),
+                    xhr = new XMLHttpRequest(), //allow to open a request
+                    x;//append an array of files pass onto ajax ; looping
+                formData.append ('file[]',file[0]);
+                xhr.open('post','upload.php');
+                xhr.send(formData); //sending it along with the request 
+            }
+            
+            //when is the request successful
+            xhr.onload = function () {
+                //pass the data that comes throught from this request
+                var data = this.responseText;
+                console.log (data);
+            }
+            
+            
+            
+            dropZone.ondrop = function(e){
+                alert("executed");
+                e.preventDefault();  
+                this.className='uploadBox';
+                console.log(e.dataTransfer.files); //filelist is wht we need 
+                if(e.dataTransfer.files.length>1){
+                    alert("You can only upload 1 photo portrait");
+                }else{
+                upload(e.dataTransfer.files); //pass the upload file to this. datatransfer object
+                };
+            };
+            
+            dropZone.ondragover = function(){
+                this.className='uploadBox dragover'; //dropzone
+                return false;
+            };
+
+            dropZone.ondragleave = function(){
+                this.className='uploadBox';
+                return false;
+            };
+        }());
+
+            
+            
+
+        </script>
+        
+        
+        
+	</body>
+<!------------------------------------------------------------>
+</html>
+
+
+
